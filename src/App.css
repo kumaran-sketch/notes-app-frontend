@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #f4f7fb;
+}
+
+.app {
+  min-height: 100vh;
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 900px;
+}
+
+.header {
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  font-size: 42px;
+  color: #111827;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.header p {
+  color: #6b7280;
+  font-size: 16px;
+}
+
+.inputSection {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.inputSection input {
+  flex: 1;
+  height: 58px;
+  border: 1px solid #dbe2ea;
+  border-radius: 16px;
+  padding: 0 20px;
+  font-size: 16px;
+  background: white;
+  outline: none;
+  transition: 0.2s;
+}
+
+.inputSection input:focus {
+  border-color: #111827;
+  box-shadow: 0 0 0 4px rgba(17, 24, 39, 0.06);
+}
+
+.inputSection button {
+  height: 58px;
+  padding: 0 30px;
+  border: none;
+  border-radius: 16px;
+  background: #111827;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.inputSection button:hover {
+  background: #1f2937;
+}
+
+.notesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 22px;
+}
+
+.noteCard {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 24px;
+  min-height: 130px;
+
+  font-size: 16px;
+  line-height: 1.8;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+
+  color: #1f2937;
+
+  border: 1px solid #eef2f7;
+
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.03),
+    0 12px 30px rgba(0, 0, 0, 0.04);
+
+  transition: all 0.25s ease;
+}
+
+.noteCard:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 10px 20px rgba(0, 0, 0, 0.06),
+    0 18px 40px rgba(0, 0, 0, 0.08);
+}
+
+.emptyState {
+  background: white;
+  border: 1px dashed #d1d5db;
+  border-radius: 20px;
+  padding: 50px;
+  text-align: center;
+  color: #6b7280;
+}
