@@ -7,7 +7,7 @@ function App() {
   const [notes, setNotes] = useState([]);
 
   const getNotes = async () => {
-    const res = await axios.get("/api/notes");
+    const res = await axios.get("http://localhost:3000/api/notes");
     setNotes(res.data);
   };
 
@@ -18,7 +18,7 @@ function App() {
   const addNote = async () => {
     if (!text.trim()) return;
 
-    await axios.post("/api/notes", {
+    await axios.post("http://localhost:3000/notes", {
       text,
     });
 
@@ -29,12 +29,19 @@ function App() {
 
   return (
     <div className="app">
+
       <div className="container">
+
         <div className="header">
-          <h1>Notes</h1>
+
+          <h1>
+            Notes
+          </h1>
+
         </div>
 
         <div className="inputSection">
+
           <input
             type="text"
             placeholder="Write a note..."
@@ -45,9 +52,11 @@ function App() {
           <button onClick={addNote}>
             Add Note
           </button>
+
         </div>
 
         <div className="notesGrid">
+
           {notes.length === 0 ? (
             <div className="emptyState">
               No notes added
@@ -62,8 +71,11 @@ function App() {
               </div>
             ))
           )}
+
         </div>
+
       </div>
+
     </div>
   );
 }
