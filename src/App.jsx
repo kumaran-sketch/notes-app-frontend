@@ -23,25 +23,23 @@ function App() {
     });
 
     setText("");
+    getNotes();
+  };
 
+  // 🆕 CLEAR NOTES
+  const clearNotes = async () => {
+    await axios.delete("https://notes.viewdns.net/api/notes");
     getNotes();
   };
 
   return (
     <div className="app">
-
       <div className="container">
-
         <div className="header">
-
-          <h1>
-            Notes
-          </h1>
-
+          <h1>Notes</h1>
         </div>
 
         <div className="inputSection">
-
           <input
             type="text"
             placeholder="Write a note..."
@@ -53,29 +51,26 @@ function App() {
             Add Note
           </button>
 
+          {/* NEW BUTTON */}
+          <button onClick={clearNotes} style={{ marginLeft: "10px", background: "red" }}>
+            Clear Notes
+          </button>
         </div>
 
         <div className="notesGrid">
-
           {notes.length === 0 ? (
             <div className="emptyState">
               No notes added
             </div>
           ) : (
             notes.map((note, index) => (
-              <div
-                key={index}
-                className="noteCard"
-              >
+              <div key={index} className="noteCard">
                 {note}
               </div>
             ))
           )}
-
         </div>
-
       </div>
-
     </div>
   );
 }
