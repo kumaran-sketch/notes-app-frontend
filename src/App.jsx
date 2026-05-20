@@ -7,7 +7,7 @@ function App() {
   const [notes, setNotes] = useState([]);
 
   const getNotes = async () => {
-    const res = await axios.get("http://notes.viewdns.net/api/notes");
+    const res = await axios.get("https://notes.viewdns.net/api/notes");
     setNotes(res.data);
   };
 
@@ -18,7 +18,7 @@ function App() {
   const addNote = async () => {
     if (!text.trim()) return;
 
-    await axios.post("http://notes.viewdns.net/api/notes", {
+    await axios.post("https://notes.viewdns.net/api/notes", {
       text,
     });
 
